@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易福彩投注程序</title>
+</head>
+<style>
+    .clearfix::after{
+        clear: both;
+        content: "";
+        display: block;
+    }
+    .wai{
+        border: 2px solid red;
+    }
+    .box{
+        width: 350px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .zuo{
+        float: left;
+    }
+    .you{
+        float: right;
+    }
+</style>
+<script>
+    function touzhu1(){
+        var text = document.getElementById("text1").value;
+        alert(text+"投注成功");
+    }
+    function touzhu2(){
+        var text = document.getElementById("text2").value;
+        alert(text+"投注成功");
+    }
+    function touzhu3(){
+        var text = document.getElementById("text3").value;
+        alert(text+"投注成功");
+    }
+    function cleartext(){
+        document.getElementById("text1").value="";
+        document.getElementById("text2").value="";
+        document.getElementById("text3").value="";
+    }
+</script>
+<body>
+    <div class="wai clearfix">
+        <img src="ico_7l.gif">
+        <h1 style="text-align: center;">简易福彩投注程序</h1>
+        <div class="box clearfix">
+            <div class="zuo">
+                彩票号码<input type="text" id="text1"><input type="button" onclick="touzhu1()" value="投注"><br>
+                彩票号码<input type="text" id="text2"><input type="button" onclick="touzhu2()" value="投注"><br>
+                彩票号码<input type="text" id="text3"><input type="button" onclick="touzhu3()" value="投注">
+            </div>
+            <div class="you">
+                <input type="button" style="background-color: aquamarine; width: 50px; height: 70px;" onclick="cleartext()" value="清空">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript常用函数的应用</title>
+    <style type="text/css">
+        #title {
+            color: red;
+        }
+    </style>
+    <h1>Javascript常用函数的应用</h1>
+    <h3 id="title">1.计算表达式的结果函数eval("字符串")</h4>
+        <p1>&nbsp;&nbsp;&nbsp;&nbsp;
+            1000+3/5=
+            <script type="text/javascript">
+                eval("document.write(1000+3/5)");
+            </script>
+            &nbsp;&nbsp;
+            x=10,y=20,x*y=
+            <script type="text/javascript">
+                eval("x=10;y=20;document.write(x*y)");
+            </script>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            2+2=
+            <script type="text/javascript">
+                eval("document.write(2+2)")
+            </script>
+            &nbsp;&nbsp;
+            x=10,x+17=
+            <script type="text/javascript">
+                eval("x=10;document.write(x+17)");
+            </script>
+        </p1>
+        <h3 id="title">2.编码函数escape("字符串")</h3>
+        <p1>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            escape('&')=
+            <script type="text/javascript">
+                document.write(escape("&"));
+            </script>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            escape('my name is 张华')=
+            <script type="text/javascript">
+                document.write(escape("my name is 张华"));
+            </script>
+        </p1>
+        <h3 id="title">3.解码函数unescape(string)</h3>
+        <p1>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            unescape('%26')=
+            <script type="text/javascript">
+                document.write(unescape("%26"));
+            </script>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            unescape('my%20name%20is%20%u5F20%u534E')=
+            <script type="text/javascript">
+                document.write(unescape("my%20name%20is%20%u5F20%u534E"));
+            </script>
+        </p1>
+        <h3 id="title">4.字符型转换成浮点数函数parseFloat(string)</h3>
+        <p1>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            parseFloat('3.14')=
+            <script type="text/javascript">
+                document.write(parseFloat("3.14"));
+            </script>
+            &nbsp;&nbsp;
+            parseFloat('314e-2')=
+            <script type="text/javascript">
+                document.write(parseFloat("314e-2"));
+            </script>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            parseFloat('3.14ab')=
+            <script type="text/javascript">
+                document.write(parseFloat("3.14ab"));
+            </script>
+            &nbsp;&nbsp;
+            parseFloat('FF2')=
+            <script type="text/javascript">
+                document.write(parseFloat("FF2"));
+            </script>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            parseFloat(' 345.25FF2')=
+            <script type="text/javascript">
+                document.write(parseFloat(" 345.25FF2"));
+            </script>
+        </p1>
+        <h3 id="title">5.字符型转换成整形函数parseInt(numberstring,radix)</h3>
+        <p1>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            32:
+            <script type="text/javascript">
+                document.write(parseInt("32"));
+            </script>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            032:
+            <script type="text/javascript">
+                document.write(parseInt("032"));
+            </script>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            0x32:
+            <script type="text/javascript">
+                document.write(parseInt("0x32"));
+            </script>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            parseInt('15*3',10)=
+            <script type="text/javascript">
+                document.write(parseInt("15*3", 10));
+            </script>
+        </p1>
+        <h3 id="title">6.判断是否是NaN函数isNaN()</h3>
+        <p1>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            isNaN("5454g")=
+            <script type="text/javascript">
+                document.write(isNaN("5454g"));
+            </script>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            isNaN("789")=
+            <script type="text/javascript">
+                document.write(isNaN("789"));
+            </script>
+        </p1>
+        <h3 id="title">7.保留固定小数点位数的函数toFixed(n)</h3>
+        <p1>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            356.25678.toFixed(2)=
+            <script type="text/javascript">
+                document.write(356.25678.toFixed(2));
+            </script>
+            &nbsp;&nbsp;
+            356.25.toFixed(3)=
+            <script type="text/javascript">
+                document.write(356.25.toFixed(3));
+            </script>
+        </p1>
+        <h3 id="title">8.将数值转换为不同进制的字符串函数toString(radix)</h3>
+        <p1>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            64.toString()=
+            <script type="text/javascript">
+                var x = 64;
+                document.write(x.toString());
+            </script>
+            &nbsp;&nbsp;
+            64.toString(2)=
+            <script type="text/javascript">
+                var x = 64;
+                document.write(x.toString(2));
+            </script>
+            &nbsp;&nbsp;
+            64.toString(8)=
+            <script type="text/javascript">
+                var x = 64;
+                document.write(x.toString(8));
+            </script>
+        </p1>
+        <h3 id="title">9.单个字符提取函数charAt(n)</h3>
+        <p1>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            ABCDEFG.charAt(1)=
+            <script type="text/javascript">
+                var y = "ABCDEFG";
+                document.write(y.charAt(1));
+            </script>
+            &nbsp;&nbsp;
+            ABCDEFG.charAt(5)=
+            <script type="text/javascript">
+                var y = "ABCDEFG";
+                document.write(y.charAt(5));
+            </script>
+            &nbsp;&nbsp;
+            ABCDEFG.charAt(10)=
+            <script type="text/javascript">
+                var y = "ABCDEFG";
+                if (y.charAt(10) == "") {
+                    document.write("是空串");
+                }
+            </script>
+        </p1>
+
+<body>
+</body>
+
+</html>

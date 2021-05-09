@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福彩投注站彩票投注助手</title>
+</head>
+<style>
+    .clearfix::after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+
+    .wai {
+        border: 2px solid #0877d1
+    }
+
+    .leftimg {
+        float: left;
+    }
+
+    .rightimg {
+        float: right;
+    }
+
+    .box {
+        width: 0 auto;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .box2 {
+        width: 512px;
+        height: 200px;
+        ;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    select {
+        width: 330px;
+        height: 115px;
+    }
+
+    input {
+        width: 80px;
+        height: 30px;
+        margin: 5px;
+    }
+
+    .area {
+        float: left;
+    }
+</style>
+
+<body>
+    <div class="wai clearfix">
+        <div class="box clearfix">
+            <div class="leftimg">
+                <img src="ico_7l.gif" alt="">
+            </div>
+            <div class="rightimg">
+                <img src="fc_logo.jpg" alt="">
+            </div>
+        </div>
+        <h1 style="text-align: center;">福彩投注站投注彩票助手</h1>
+        <div class="box2 clearfix">
+            <div class="leftimg">
+                <input type="button" id="b1" value="机选1注" onclick="add(1)"><br>
+                <input type="button" id="b2" value="机选5注" onclick="add(5)"><br>
+                <input type="button" id="b3" value="机选10注" onclick="add(10)">
+            </div>
+            <div class="area clearfix">
+                <select id="tarea" size="6"></select>
+            </div>
+            <div class="rightimg">
+                <input type="button" id="delete" value="删除" onclick="deleteOption()">
+                <br>
+                <br>
+                <br>
+                <input type="button" id="clear" value="全部删除" onclick="clearOption()">
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function add(n) {
+        var tarea = document.getElementById("tarea");
+        for (i = 0; i < n; i++) {
+            var option = document.createElement("option");
+            var str = "";
+            for (j = 0; j < 8; j++) {
+                var num1 = parseInt(Math.random() * 10 + "");
+                var num2 = parseInt(Math.random() * 10 + "");
+                var num = num1 + num2 + "";
+                if (num.length < 2) {
+                    num = "0" + num;
+                }
+                str += num + "  ";
+            }
+            option.innerHTML = str;
+            tarea.appendChild(option);
+        }
+    }
+
+    function deleteOption() {
+        var obj = document.getElementById("tarea");
+        var index = obj.selectedIndex;
+        if (index == -1) {
+            alert("请先选择列表项后再删除！");
+            return;
+        }
+        obj.options.remove(index);
+    }
+
+    function clearOption() {
+        var obj = document.getElementById("tarea");
+        var options = obj.options;
+        options.length = 0;
+    }
+</script>
+
+</html>

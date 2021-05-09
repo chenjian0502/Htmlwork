@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        window.onload=function(){
+            var button = document.getElementById('panduan');
+            button.onclick=function(){
+                var grade = document.getElementById('grade').value;
+                var gradeLevel = '优秀';
+                    if(grade<60) {
+                        gradeLevel='不及格';
+                      
+                    }else
+                    if(grade<70) {
+                        gradeLevel='及格';
+                        
+                    }else
+                    if(grade<80){
+                        gradeLevel='良好';
+                     
+                    }else
+                    if(grade<90){
+                        gradeLevel='优良';
+                        
+                    }else
+                    if(grade>100 || grade<0){
+                        alert('你这个成绩很有问题');
+                    
+                    }  
+                    alert('成绩等级为'+gradeLevel);         
+                }
+               
+        }
+           
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div align="center" style="background: green; width: 400px; height: 500px;">
+        <p>
+            请输入成绩:<input type="number" id="grade" required>
+        </p>
+        <button type="button" id="panduan">判断</button>
+    </div>
+    
+</body>
+</html>

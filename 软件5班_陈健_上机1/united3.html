@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消息对话框综合应用</title>
+    <style>
+        .wai {
+            position: relative;
+            border-left: 8px solid #3434d0;
+            border-top: 8px solid #3434d0;
+            border-right: 8px solid #0c0c33;
+            border-bottom: 8px solid #0c0c33;
+            width: 800px;
+            text-align: center;
+            margin: 0 auto;
+            background-color: #99ff99;
+            color: #7171e3;
+            padding-left: 0%;
+            padding-top: 0%;
+            padding-right: 0%;
+            padding-bottom: 0%;
+        }
+
+        .nei {
+            position: relative;
+            border-top: 8px solid #0c0c33;
+            border-left: 8px solid #0c0c33;
+            border-right: 8px solid #3434d0;
+            border-bottom: 8px solid #3434d0;
+            text-align: center;
+            margin-top: 0%;
+            margin-bottom: 0%;
+            margin-left: 0%;
+            margin-right: 0%;
+            width: 900px;
+            background-color: #99ff99;
+        }
+    </style>
+    <script>
+        function inputname() {
+            var name = prompt("输入你的姓名：");
+            if (name == "") {
+                alert("请你输入的姓名！");
+                return;
+            } else {
+                alert("你的名字是:" + name);
+            }
+            document.getElementById("name").value = name;
+        }
+
+        function clearname() {
+            document.getElementById("name").value = "";
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset class="wai">
+        <fieldset class="nei">
+            <legend style="font-size:larger;">消息对话框综合应用</legend>
+            你的姓名:<br>
+            <input type="text" id="name">
+            <br>
+            <br>
+            <input type="button" value="输入姓名" onclick="inputname()">
+            <input type="button" value="清空" onclick="clearname()">
+        </fieldset>
+    </fieldset>
+</body>
+
+</html>

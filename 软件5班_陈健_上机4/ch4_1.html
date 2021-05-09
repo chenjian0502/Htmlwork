@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div :style="div_style"></div>
+        <div>
+            <button v-on:click="changeColor('red')">{{red}}</button>
+            <button v-on:click="changeColor('yellow')">{{yellow}}</button>
+            <button v-on:click="changeColor('blue')">{{blue}}</button>
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            div_style: {
+                width: "200px",
+                height: "200px",
+                backgroundColor: "black"
+            },
+            red: '点击变红',
+            yellow: '点击变黄',
+            blue: '点击变蓝',
+        },
+        methods: {
+            changeColor(c) {
+                this.div_style.backgroundColor = c;
+            }
+        }
+    })
+</script>
+
+</html>

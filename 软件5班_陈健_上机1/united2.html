@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算任意区间内连续自然数的累加和</title>
+    <style>
+        .wai {
+            width: 800px;
+            margin: 0 auto;
+            border-left: 10px solid #193f19;
+            border-top: 10px solid #193f19;
+            border-bottom: 10px solid #66ff66;
+            border-right: 10px solid #66ff66;
+        }
+
+        .nei {
+            border-left: 10px solid #66ff66;
+            border-top: 10px solid #66ff66;
+            border-bottom: 10px solid #193f19;
+            border-right: 10px solid #193f19;
+        }
+
+        .caculate {
+            text-align: center;
+        }
+
+        input {
+            margin: 10px;
+        }
+    </style>
+    <script src="./united2.js"></script>
+</head>
+
+<body>
+    <div class="wai">
+        <div class="nei">
+            <h1 style="text-align: center;">计算任意区间内连续自然数的累加和</h1>
+            <h1 style="text-align: center;">定义区间</h1>
+            <div class="caculate">
+                起始数：<input type="text" id="start">
+                终止数：<input type="text" id="end">
+                <br>
+                累加和:<input type="text" id="sum">
+                <br>
+                <input type="button" value="计算" onclick="add();">
+                <input type="button" value="清空" onclick="clearText();">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

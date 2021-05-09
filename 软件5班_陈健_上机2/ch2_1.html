@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程成绩评定</title>
+    <style type="text/css">
+        body {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">课程成绩评定</h1>
+    <div align="center">
+        <button onclick="myFunction()">输入成绩</button>
+
+        <p id="grade"></p>
+        <p id="level"></p>
+
+        <script>
+            function myFunction() {
+                var level = undefined;
+                var grade = prompt("请输入成绩：", "");
+                if (grade < 60 && grade != "") {
+                    level = "成绩等级为：不及格";
+                    alert(level);
+                }
+                else if (grade < 70 && grade != "") {
+                    level = "成绩等级为：及格";
+                    alert(level);
+                }
+                else if (grade < 80 && grade != "") {
+                    level = "成绩等级为：良好";
+                    alert(level);
+                }
+                else if (grade < 90 && grade != "") {
+                    level = "成绩等级为：优良";
+                    alert(level);
+                } 
+                else if (grade <= 100 && grade != "") {
+                    level = "成绩等级为：优秀";
+                    alert(level);
+                } else if (grade > 100 || grade < 0 && grade != "") {
+                    level = "";
+                    alert('输入的成绩有问题！');
+                }
+
+                if (grade == "") {
+                    g = "用户取消输入";
+                } else if (level == "") {
+                    g = '输入的成绩有问题！';
+                } else {
+                    g = "课程成绩为：" + grade;
+                    l = level;
+                }
+                document.getElementById("grade").innerHTML = g;
+                document.getElementById("level").innerHTML = l;
+            }
+        </script>
+    </div>
+</body>
+
+</html>

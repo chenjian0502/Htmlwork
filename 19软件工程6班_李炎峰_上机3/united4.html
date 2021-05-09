@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书选购</title>
+</head>
+<style>
+    .clearfix::after {
+        clear: both;
+        content: "";
+        display: block;
+    }
+
+    .leftdiv {
+        float: left;
+    }
+
+    .rightdiv {
+        float: right;
+    }
+
+    .box {
+        width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    h3 {
+        font-weight: normal;
+    }
+
+    select {
+        width: 300px;
+        height: 350px;
+    }
+
+    .bottom {
+        margin-top: 460px;
+    }
+
+    input {
+        width: 80px;
+        height: 30px;
+    }
+</style>
+
+<body>
+    <div class="box clearfix">
+        <h3>选购图书</h3>
+        <div class="leftdiv">
+            <h3>图书备选区</h3>
+            <select size="7" id="s1">
+                <option>计算机网络(32元)</option>
+                <option>数据结构(58元)</option>
+                <option>Java程序设计(45元)</option>
+                <option>Web前端开发技术(49元)</option>
+                <option>Web前端开发技术实验与实践(35元)</option>
+                <option>计算机组成原理(30元)</option>
+                <option>数据库开发技术(30元)</option>
+            </select>
+        </div>
+        <div class="rightdiv">
+            <h3>图书采购区</h3>
+            <select size="7" id="s2">
+            </select>
+        </div>
+        <div class="bottom">
+            <input type="button" value="单一选购" onclick="add();">
+            <input type="button" value="单一退购" onclick="remove();">
+            <input type="button" value="清空" onclick="removeAll();">
+            <input type="button" value="结账" onclick="pay();">
+        </div>
+    </div>
+</body>
+<script>
+    function add() {
+        var index = document.getElementById("s1").selectedIndex;
+        var str = document.getElementById("s1").options[index].text;
+        var s2 = document.getElementById("s2");
+        var option = document.createElement("option");
+        option.innerHTML = str;
+        s2.appendChild(option);
+    }
+    function remove(){
+        var obj = document.getElementById("s2");
+            var index = obj.selectedIndex;
+            if(index==-1){
+                alert("请先选择列表项后再删除！");
+                return;
+            }
+            obj.options.remove(index)
+    }
+    function removeAll() {
+            var obj = document.getElementById("s2");
+            var items = obj.options;
+            items.length = 0;
+        }
+    function pay(){
+        var sum = 0;
+        var obj = document.getElementById("s2");
+        var length = obj.options.length;
+        for(i = 0; i < length; i++){
+            var bookname = obj.options[i].text;
+            if(bookname=="计算机网络(32元)"){
+                sum+=32;
+            }
+            if(bookname=="数据结构(58元)"){
+                sum+=58;
+            }
+            if(bookname=="Java程序设计(45元)"){
+                sum+=45;
+            }
+            if(bookname=="Web前端开发技术(49元)"){
+                sum+=49;
+            }
+            if(bookname=="Web前端开发技术实验与实践(35元)"){
+                sum+=35;
+            }
+            if(bookname=="计算机组成原理(30元)"){
+                sum+=30;
+            }
+            if(bookname=="数据库开发技术(30元)"){
+                sum+=30;
+            }
+        }
+        alert("请您付款"+sum+"元，欢迎下次光临！");
+    }    
+</script>
+
+</html>

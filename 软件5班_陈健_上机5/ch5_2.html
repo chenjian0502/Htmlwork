@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>微博发布</title>
+    <script src="vue.js"></script>
+    <style>
+        li {
+            height: 50px;
+            width: 800px;
+            background-color: orange;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <textarea v-model="msg" style="width: 400px;height: 100px;"></textarea>
+        <button @click="add()" style="background-color: orange;">发布微博</button>
+        <ul>
+            <li v-for="(v,i) in article">
+                <p>{{v}}<span @click="del(i)">[x]</span></p>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            article: [
+                "真的很好！",
+                "有你的世界，"
+            ],
+            msg: ''
+        },
+        methods: {
+            add: function () {
+                this.article.unshift(this.msg);
+            },
+            del: function (i) {
+                this.article.splice(i, 1);
+            }
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易密码验证</title>
+</head>
+<script>
+     function clearText(){
+        document.getElementById("username").value="";
+        document.getElementById("password").value="";
+    }
+    
+    function check(){
+        var password = document.getElementById("password").value;
+        var length = password.length;
+        if(length < 8){
+            alert("密码长度必须大于等于8！，请重输！");
+            document.getElementById("password").value = "";
+            return;
+        }
+
+        var flag = false;
+        for(i=0;i<length;i++){
+            if(password.substring(i,i+1).match("[a-zA-Z]")){
+                flag = true;
+                break;
+            }
+        }
+        if(!flag){
+            alert("密码中必须包含一个以上字母！请重输！");
+            document.getElementById("password").value="";
+            return;
+        }
+        alert("验证成功！");
+    }
+</script>
+<body>
+    <h1>简易密码验证</h1>
+    用户名：<input type="text" id="username"><br>
+    密码：<input type="password" id="password"><br>
+    <input type="button" value="验证" onclick="check()">
+    <input type="button" value="重置" onclick="clearText()">
+</body>
+</html>
